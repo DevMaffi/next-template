@@ -40,7 +40,7 @@ importers:
         specifier: ^15.9.0
         version: 15.9.0
       postcss:
-        specifier: ^8
+        specifier: ^8.4.45
         version: 8.4.45
       prettier:
         specifier: 3.3.3
