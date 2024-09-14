@@ -4,12 +4,12 @@ import globals from "globals"
 
 import jsConfig from "./eslint/eslint-config-js.mjs"
 
+/**
+ * @type {import("typescript-eslint").ConfigWithExtends[]}
+ */
 const combineConfigs = [
     ...jsConfig,
-].map(config => ({
-    files: ["**/*.{ts,tsx}"],
-    ...config,
-}))
+]
 
 export default tseslint.config(
     js.configs.recommended,
@@ -23,5 +23,8 @@ export default tseslint.config(
             parserOptions: ["tsconfig.json"],
         },
     },
-    ...combineConfigs,
+    ...combineConfigs.map(config => ({
+        files: ["**/*.{ts,tsx}"],
+        ...config,
+    })),
 )

@@ -1,6 +1,6 @@
 /**
  * @see https://eslint.org/docs/latest/rules
- * @type {import("eslint").Linter.Config[]}
+ * @type {import("typescript-eslint").ConfigWithExtends[]}
  */
 const config = [
     {
@@ -13,8 +13,8 @@ const config = [
             "array-callback-return": [
                 "error",
                 {
-                    checkForEach: true,
-                    allowVoid: true,
+                    checkForEach: true, // 💡 report forEach callbacks that return a value
+                    allowVoid: true, // 💡 allows void in forEach callbacks
                 },
             ],
             "capitalized-comments": [
@@ -64,7 +64,7 @@ const config = [
             "no-cond-assign": ["error", "always"], // ☑️
             "no-console": "error",
             "no-continue": "error",
-            "no-div-regex": "error", // 💡 characters /= at the beginning of a regular expression literal can be confused with a division assignment operator
+            "no-div-regex": "error", // 💡 /= can be confused with a division assignment operator
             "no-duplicate-imports": [
                 "error",
                 { includeExports: true },
