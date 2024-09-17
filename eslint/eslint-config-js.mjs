@@ -7,14 +7,14 @@ const config = [
         rules: {
             // eslint
 
-            "arrow-body-style": "error", // 💡 enforces no braces where they can be omitted
+            "arrow-body-style": "error",
             "block-scoped-var": "error",
             "camelcase": "error",
             "array-callback-return": [
                 "error",
                 {
-                    checkForEach: true, // 💡 report forEach callbacks that return a value
-                    allowVoid: true, // 💡 allows void in forEach callbacks
+                    checkForEach: true,
+                    allowVoid: true,
                 },
             ],
             "capitalized-comments": [
@@ -23,7 +23,7 @@ const config = [
                 { ignoreConsecutiveComments: true },
             ],
 
-            "consistent-return": "error", // 💡 require return statements to either always or never specify values
+            "consistent-return": "error",
             "curly": ["error", "multi-or-nest", "consistent"],
             "default-case": "error",
             "default-case-last": "error",
@@ -32,12 +32,12 @@ const config = [
             "dot-notation": "error",
             "eqeqeq": "error",
             "func-name-matching": "error",
-            "func-names": "off", // ❌ 💡 requires function expressions to have a name
+            "func-names": ["error", "as-needed"],
             "func-style": [
                 "error",
                 "declaration",
                 { allowArrowFunctions: true }, // ⚠️ prefer-arrow-callback
-            ], // 💡 requires the use of function declarations instead of function expressions assigned to variables
+            ],
 
             "guard-for-in": "off", // ❌
             "id-denylist": ["error", "z"], // TODO: complete list
@@ -64,13 +64,13 @@ const config = [
             "no-cond-assign": ["error", "always"], // ☑️
             "no-console": "error",
             "no-continue": "error",
-            "no-div-regex": "error", // 💡 /= can be confused with a division assignment operator
+            "no-div-regex": "error",
             "no-duplicate-imports": [
                 "error",
                 { includeExports: true },
             ],
 
-            "no-eq-null": "error", // 💡 eqeqeq
+            "no-eq-null": "error",
             "no-eval": "error",
             "no-extend-native": "error",
             "no-else-return": [
@@ -83,7 +83,7 @@ const config = [
             ],
 
             "no-extra-bind": "error",
-            "no-implicit-globals": "error", // 💡 does not apply to ES and CommonJS modules since they have a module scope
+            "no-implicit-globals": "error",
             "no-implied-eval": "error",
             "no-extra-boolean-cast": [
                 "error",
@@ -96,7 +96,7 @@ const config = [
 
             "no-inline-comments": "off", // ❌
             "no-lone-blocks": "error",
-            "no-lonely-if": "error", // 💡 disallows if statements as the only statement in else blocks
+            "no-lonely-if": "error",
             "no-inner-declarations": [
                 "error",
                 "functions",
