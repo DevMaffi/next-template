@@ -69,6 +69,43 @@ const config = [
                 "error",
                 { includeExports: true },
             ],
+
+            "no-eq-null": "error", // 💡 eqeqeq
+            "no-eval": "error",
+            "no-extend-native": "error",
+            "no-else-return": [
+                "error",
+                { allowElseIf: false },
+            ],
+            "no-empty-function": [
+                "error",
+                { allow: ["arrowFunctions"] },
+            ],
+
+            "no-extra-bind": "error",
+            "no-implicit-globals": "error", // 💡 does not apply to ES and CommonJS modules since they have a module scope
+            "no-implied-eval": "error",
+            "no-extra-boolean-cast": [
+                "error",
+                { enforceForInnerExpressions: true },
+            ], // ☑️
+            "no-implicit-coercion": [
+                "error",
+                { disallowTemplateShorthand: true },
+            ],
+
+            "no-inline-comments": "off", // ❌
+            "no-lone-blocks": "error",
+            "no-lonely-if": "error", // 💡 disallows if statements as the only statement in else blocks
+            "no-inner-declarations": [
+                "error",
+                "functions",
+                { blockScopedFunctions: "disallow" },
+            ],
+            "no-invalid-this": [
+                "error",
+                { capIsConstructor: false },
+            ],
         },
     },
 ]
