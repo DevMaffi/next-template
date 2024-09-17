@@ -106,6 +106,30 @@ const config = [
                 "error",
                 { capIsConstructor: false },
             ],
+
+            "no-loop-func": "error",
+            "no-magic-numbers": "off", // ❌
+            "no-multi-assign": "error",
+            "no-multi-str": "error",
+            "no-negated-condition": "error",
+
+            "no-nested-ternary": "error",
+            "no-new": "off", // ❌
+            "no-new-func": "error",
+            "no-new-wrappers": "error",
+            "no-object-constructor": "error",
+
+            "no-plusplus": "off", // ❌
+            "no-return-assign": ["error", "always"],
+            "no-script-url": "error",
+            "no-param-reassign": [
+                "error",
+                { props: true },
+            ],
+            "no-promise-executor-return": [
+                "error",
+                { allowVoid: true },
+            ],
         },
     },
 ]
