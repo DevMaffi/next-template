@@ -130,6 +130,33 @@ const config = [
                 "error",
                 { allowVoid: true },
             ],
+
+            "no-self-compare": "error",
+            "no-sequences": "error",
+            "no-template-curly-in-string": "error",
+            "no-ternary": "off", // ❌
+            "no-shadow": [
+                "error",
+                { hoist: "all" },
+            ],
+
+            "no-throw-literal": "error",
+            "no-undef-init": "off", // ❌
+            "no-undefined": "off", // ❌
+            "no-underscore-dangle": "error",
+            "no-unmodified-loop-condition": "off", // ❌
+
+            "no-unreachable-loop": "off", // ❌
+            "no-use-before-define": "error",
+            "no-useless-assignment": "off", // ❌ ⚠️ init-declarations
+            "no-unneeded-ternary": [
+                "error",
+                { defaultAssignment: false },
+            ],
+            "no-unsafe-optional-chaining": [
+                "error",
+                { disallowArithmeticOperators: true },
+            ], // ☑️
         },
     },
 ]
