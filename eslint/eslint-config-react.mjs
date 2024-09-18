@@ -56,10 +56,63 @@ const config = [
             ],
             "react/jsx-curly-newline": [
                 "error",
+                { singleline: "forbid" },
+            ],
+
+            "react/jsx-first-prop-new-line": ["error", "multiline"],
+            "react/jsx-filename-extension": [
+                "error",
                 {
-                    multiline: "consistent", // ⚠️ react/jsx-curly-spacing
-                    singleline: "forbid",
+                    allow: "as-needed",
+                    extensions: [".tsx"],
                 },
+            ],
+            "react/jsx-handler-names": [
+                "error",
+                {
+                    checkLocalVariables: true,
+                    checkInlineFunction: true,
+                },
+            ],
+            "react/jsx-indent": [
+                "error",
+                4,
+                {
+                    checkAttributes: true,
+                    indentLogicalExpressions: true,
+                },
+            ],
+            "react/jsx-indent-props": [
+                "error",
+                { ignoreTernaryOperator: true },
+            ],
+
+            "react/jsx-max-props-per-line": "error",
+            "react/jsx-no-constructed-context-values": "error",
+            "react/jsx-key": [
+                "error",
+                {
+                    checkFragmentShorthand: true,
+                    checkKeyMustBeforeSpread: true,
+                    warnOnDuplicates: true,
+                },
+            ], // ☑️
+            "react/jsx-newline": [
+                "error",
+                { prevent: true },
+            ],
+            "react/jsx-no-bind": [
+                "error",
+                { allowFunctions: true },
+            ],
+
+            "react/jsx-no-literals": "off", // ❌
+            "react/jsx-no-script-url": "error",
+            "react/jsx-no-useless-fragment": "error",
+            "react/jsx-one-expression-per-line": "error",
+            "react/jsx-no-leaked-render": [
+                "error",
+                { validStrategies: ["ternary"] },
             ],
         },
     },
