@@ -167,8 +167,15 @@ const config = [
             "no-var": "off", // ❌ ☑️
             "no-void": "off", // ❌
             "no-warning-comments": "warn",
-            "object-shorthand": ["error", "consistent-as-needed"],
             "one-var": ["error", "never"],
+            "object-shorthand": [
+                "error",
+                "always",
+                {
+                    avoidQuotes: true,
+                    avoidExplicitReturnArrows: true,
+                },
+            ],
 
             "operator-assignment": "error",
             "prefer-destructuring": "off", // ❌
@@ -179,8 +186,8 @@ const config = [
             ],
             "prefer-const": [
                 "error",
-                { ignoreReadBeforeAssign: true },
-            ], // ☑️ ⚠️ no-use-before-define
+                { ignoreReadBeforeAssign: true }, // ⚠️ no-use-before-define
+            ], // ☑️
 
             "prefer-named-capture-group": "error",
             "prefer-object-spread": "error",
