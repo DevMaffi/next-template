@@ -3,12 +3,14 @@ import tseslint from "typescript-eslint"
 import globals from "globals"
 
 import jsConfig from "./eslint/eslint-config-js.mjs"
+import react from "./eslint/eslint-config-react.mjs"
 
 /**
  * @type {import("typescript-eslint").ConfigWithExtends[]}
  */
 const combineConfigs = [
     ...jsConfig,
+    ...react,
 ]
 
 export default tseslint.config(
