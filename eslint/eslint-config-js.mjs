@@ -181,6 +181,39 @@ const config = [
                 "error",
                 { ignoreReadBeforeAssign: true },
             ], // ☑️ ⚠️ no-use-before-define
+
+            "prefer-named-capture-group": "error",
+            "prefer-object-spread": "error",
+            "prefer-promise-reject-errors": "error",
+            "prefer-template": "error",
+            "prefer-regex-literals": [
+                "error",
+                { disallowRedundantWrapping: true },
+            ],
+
+            "require-atomic-updates": "error",
+            "require-await": "off", // ❌
+            "sort-keys": "off", // ❌
+            "sort-vars": "off", // ❌
+            "sort-imports": [
+                "error",
+                { ignoreDeclarationSort: true },
+            ],
+
+            "strict": "error",
+            "symbol-description": "error",
+            "unicode-bom": "error",
+            "vars-on-top": "off", // ❌
+            "valid-typeof": [
+                "error",
+                { requireStringLiterals: true },
+            ], // ☑️
+
+            "yoda": [
+                "error",
+                "never",
+                { exceptRange: true },
+            ],
         },
     },
 ]
