@@ -36,7 +36,7 @@ const config = [
             "func-style": [
                 "error",
                 "declaration",
-                { allowArrowFunctions: true }, // ⚠️ prefer-arrow-callback
+                { allowArrowFunctions: true },
             ],
 
             "guard-for-in": "off", // ❌
@@ -157,6 +157,30 @@ const config = [
                 "error",
                 { disallowArithmeticOperators: true },
             ], // ☑️
+
+            "no-useless-call": "error",
+            "no-useless-computed-key": "error",
+            "no-useless-concat": "error",
+            "no-useless-rename": "error",
+            "no-useless-return": "error",
+
+            "no-var": "off", // ❌ ☑️
+            "no-void": "off", // ❌
+            "no-warning-comments": "warn",
+            "object-shorthand": ["error", "consistent-as-needed"],
+            "one-var": ["error", "never"],
+
+            "operator-assignment": "error",
+            "prefer-destructuring": "off", // ❌
+            "prefer-exponentiation-operator": "error",
+            "prefer-arrow-callback": [
+                "error",
+                { allowNamedFunctions: true },
+            ],
+            "prefer-const": [
+                "error",
+                { ignoreReadBeforeAssign: true },
+            ], // ☑️ ⚠️ no-use-before-define
         },
     },
 ]
