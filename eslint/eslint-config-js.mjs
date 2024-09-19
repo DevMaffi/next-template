@@ -33,11 +33,7 @@ const config = [
             "eqeqeq": "error",
             "func-name-matching": "error",
             "func-names": ["error", "as-needed"],
-            "func-style": [
-                "error",
-                "declaration",
-                { allowArrowFunctions: true },
-            ],
+            "func-style": ["error", "declaration"],
 
             "guard-for-in": "off", // ❌
             "id-denylist": ["error", "z"], // TODO: complete list
