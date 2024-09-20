@@ -103,7 +103,10 @@ const config = [
             ],
             "react/jsx-no-bind": [
                 "error",
-                { allowFunctions: true },
+                {
+                    allowArrowFunctions: true,
+                    allowFunctions: true,
+                },
             ],
 
             "react/jsx-no-literals": "off", // ❌
@@ -114,6 +117,52 @@ const config = [
                 "error",
                 { validStrategies: ["ternary"] },
             ],
+
+            "react/jsx-pascal-case": "error",
+            "react/jsx-fragments": ["error", "element"],
+            "react/jsx-props-no-multi-spaces": "error",
+            "react/jsx-curly-brace-presence": [
+                "error",
+                { props: "always" },
+            ],
+            "react/jsx-props-no-spreading": [
+                "error",
+                { html: "ignore" },
+            ],
+
+            "react/jsx-props-no-spread-multi": "error",
+            "react/no-invalid-html-attribute": "error",
+            "react/jsx-sort-props": [
+                "error",
+                {
+                    callbacksLast: true,
+                    shorthandLast: true,
+                    noSortAlphabetically: true,
+                    reservedFirst: true,
+                },
+            ],
+            "react/jsx-tag-spacing": [
+                "error",
+                { beforeClosing: "never" },
+            ],
+            "react/jsx-wrap-multilines": [
+                "error",
+                {
+                    declaration: "parens-new-line",
+                    assignment: "parens-new-line",
+                    return: "parens-new-line",
+                    arrow: "parens-new-line",
+                    condition: "parens-new-line",
+                    logical: "parens-new-line",
+                    prop: "parens-new-line",
+                },
+            ],
+
+            "react/no-access-state-in-setstate": "error",
+            "react/no-adjacent-inline-elements": "error",
+            "react/no-array-index-key": "warn",
+            "react/no-danger": "error",
+            "react/no-multi-comp": "error",
         },
     },
 ]
