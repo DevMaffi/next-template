@@ -14,25 +14,25 @@
         "pnpm": "^9"
     },
     "dependencies": {
-        "next": "14.2.9",
+        "next": "14.2.13",
         "react": "^18",
         "react-dom": "^18"
     },
     "devDependencies": {
-        "@eslint/js": "^9",
+        "@eslint/js": "9.10.0",
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "eslint": "^9",
-        "eslint-plugin-react": "^7.36.1",
-        "eslint-plugin-react-hooks": "^4.6.2",
-        "eslint-plugin-react-refresh": "^0.4.12",
+        "eslint-plugin-react": "7.36.1",
+        "eslint-plugin-react-hooks": "4.6.2",
+        "eslint-plugin-react-refresh": "0.4.12",
         "globals": "^15.9.0",
-        "postcss": "^8.4.45",
+        "postcss": "^8.4.47",
         "prettier": "3.3.3",
-        "tailwindcss": "^3.4.10",
+        "tailwindcss": "^3.4.12",
         "typescript": "5.5.4",
-        "typescript-eslint": "^8.5.0"
+        "typescript-eslint": "8.5.0"
     },
     "pnpm": {
         "overrides": {
