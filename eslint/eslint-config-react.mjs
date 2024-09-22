@@ -23,7 +23,7 @@ const config = [
 
             "react/button-has-type": "error",
             "react/checked-requires-onchange-or-readonly": "error",
-            "react/forward-ref-uses-ref": "error",
+            "react/default-props-match-prop-types": "error",
             "react/boolean-prop-naming": [
                 "error",
                 { validateNested: true },
@@ -34,19 +34,19 @@ const config = [
                 { destructureInSignature: "always" },
             ],
 
+            "react/forward-ref-uses-ref": "error",
             "react/function-component-definition": "error",
             "react/hook-use-state": "error",
             "react/iframe-missing-sandbox": "error",
-            "react/jsx-child-element-spacing": "error",
             "react/jsx-boolean-value": [
                 "error",
                 "never",
                 { assumeUndefinedIsFalse: true },
             ],
 
+            "react/jsx-child-element-spacing": "error",
             "react/jsx-closing-bracket-location": ["error", "line-aligned"],
             "react/jsx-closing-tag-location": ["error", "line-aligned"],
-            "react/jsx-equals-spacing": "error",
             "react/jsx-curly-spacing": [
                 "error",
                 {
@@ -59,6 +59,7 @@ const config = [
                 { singleline: "forbid" },
             ],
 
+            "react/jsx-equals-spacing": "error",
             "react/jsx-first-prop-new-line": ["error", "multiline"],
             "react/jsx-filename-extension": [
                 "error",
@@ -82,13 +83,12 @@ const config = [
                     indentLogicalExpressions: true,
                 },
             ],
+
+            "react/jsx-max-props-per-line": "error",
             "react/jsx-indent-props": [
                 "error",
                 { ignoreTernaryOperator: true },
             ],
-
-            "react/jsx-max-props-per-line": "error",
-            "react/jsx-no-constructed-context-values": "error",
             "react/jsx-key": [
                 "error",
                 {
@@ -109,15 +109,16 @@ const config = [
                 },
             ],
 
+            "react/jsx-no-constructed-context-values": "error",
             "react/jsx-no-literals": "off", // ❌
             "react/jsx-no-script-url": "error",
             "react/jsx-no-useless-fragment": "error",
-            "react/jsx-one-expression-per-line": "error",
             "react/jsx-no-leaked-render": [
                 "error",
                 { validStrategies: ["ternary"] },
             ],
 
+            "react/jsx-one-expression-per-line": "error",
             "react/jsx-pascal-case": "error",
             "react/jsx-fragments": ["error", "element"],
             "react/jsx-props-no-multi-spaces": "error",
@@ -125,13 +126,12 @@ const config = [
                 "error",
                 { props: "always" },
             ],
+
+            "react/jsx-props-no-spread-multi": "error",
             "react/jsx-props-no-spreading": [
                 "error",
                 { html: "ignore" },
             ],
-
-            "react/jsx-props-no-spread-multi": "error",
-            "react/no-invalid-html-attribute": "error",
             "react/jsx-sort-props": [
                 "error",
                 {
@@ -158,11 +158,28 @@ const config = [
                 },
             ],
 
-            "react/no-access-state-in-setstate": "error",
+            "react/no-invalid-html-attribute": "error",
             "react/no-adjacent-inline-elements": "error",
             "react/no-array-index-key": "warn",
             "react/no-danger": "error",
             "react/no-multi-comp": "error",
+
+            "react/no-namespace": "error",
+            "react/no-this-in-sfc": "error",
+            "react/no-unstable-nested-components": "error",
+            "react/no-unused-prop-types": "error",
+            "react/no-unknown-property": [
+                "error",
+                { requireDataLowercase: true },
+            ], // ☑️
+
+            "react/no-object-type-as-default-prop": "error",
+            "react/prefer-read-only-props": "off", // ❌
+            "react/require-default-props": "off", // ❌
+            "react/self-closing-comp": "error",
+            "react/style-prop-object": "error",
+
+            "react/void-dom-elements-no-children": "error",
         },
     },
 ]
