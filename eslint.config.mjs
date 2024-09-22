@@ -5,6 +5,7 @@ import globals from "globals"
 import jsConfig from "./eslint/eslint-config-js.mjs"
 import react from "./eslint/eslint-config-react.mjs"
 import reactHooks from "./eslint/eslint-config-react-hooks.mjs"
+import reactRefresh from "./eslint/eslint-config-react-refresh.mjs"
 
 /**
  * @type {import("typescript-eslint").ConfigWithExtends[]}
@@ -13,6 +14,7 @@ const combineConfigs = [
     ...jsConfig,
     ...react,
     ...reactHooks,
+    ...reactRefresh,
 ]
 
 export default tseslint.config(
