@@ -36,7 +36,7 @@ const config = [
             "func-style": ["error", "declaration"],
 
             "guard-for-in": "off", // ❌
-            "id-denylist": ["error", "z"], // TODO: complete list
+            "id-denylist": ["error", "z", "e", "error", "event", "response", "reject", "restProps", "button", "subTitle", "duplicate", "searchQuery", "data", "msg"],
             "init-declarations": "error",
             "logical-assignment-operators": ["error", "never"],
             "id-length": [
