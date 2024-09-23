@@ -22,13 +22,14 @@ export const metadata: Metadata = {
     description: "Powered by create next app",
 }
 
-type RootLayoutProps = {
+interface IRootLayoutProps
+{
     children: React.ReactNode
 }
 
 function RootLayout({
     children,
-}: RootLayoutProps)
+}: IRootLayoutProps)
 {
     return (
         <html lang={"en"}>
