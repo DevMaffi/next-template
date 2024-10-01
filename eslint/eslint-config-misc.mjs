@@ -25,7 +25,7 @@ const config = [
 
             // @next/next
             ...next.configs.recommended.rules,
-            "@next/next/no-duplicate-head": "off", // ❌
+            "@next/next/no-duplicate-head": "off", // ❌ ☑️
         },
     },
 ]
