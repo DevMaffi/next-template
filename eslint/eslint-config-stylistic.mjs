@@ -46,6 +46,76 @@ const config = [
             "@stylistic/eol-last": "error",
             "@stylistic/func-call-spacing": "error",
             "@stylistic/function-call-argument-newline": "error",
+
+            // "@stylistic/function-paren-newline": ["error", "multiline-arguments"],
+            // "@stylistic/implicit-arrow-linebreak": "error",
+            // "@stylistic/indent": "error",
+            // "@stylistic/indent-binary-ops": ["error", 4],
+            "@stylistic/jsx-child-element-spacing": "error",
+
+            "@stylistic/jsx-closing-bracket-location": ["error", "line-aligned"],
+            "@stylistic/jsx-closing-tag-location": "error",
+            "@stylistic/jsx-curly-brace-presence": [
+                "error",
+                {
+                    props: "always",
+                    propElementValues: "always", // ⚠️
+                },
+            ],
+            "@stylistic/jsx-curly-newline": [
+                "error",
+                { singleline: "forbid" },
+            ],
+            "@stylistic/jsx-curly-spacing": [
+                "error",
+                { children: true },
+            ],
+
+            "@stylistic/jsx-equals-spacing": "error",
+            "@stylistic/jsx-first-prop-new-line": ["error", "multiline"],
+            // "@stylistic/jsx-function-call-newline": "error",
+            "@stylistic/jsx-max-props-per-line": "error",
+            "@stylistic/jsx-indent-props": [
+                "error",
+                { ignoreTernaryOperator: true },
+            ],
+
+            "@stylistic/jsx-one-expression-per-line": "error",
+            "@stylistic/jsx-pascal-case": "error",
+            "@stylistic/jsx-props-no-multi-spaces": "error",
+            // "@stylistic/jsx-quotes": "error",
+            "@stylistic/jsx-newline": [
+                "error",
+                { prevent: true },
+            ],
+
+            "@stylistic/jsx-self-closing-comp": "error",
+            "@stylistic/jsx-sort-props": [
+                "error",
+                {
+                    callbacksLast: true,
+                    shorthandLast: true,
+                    noSortAlphabetically: true,
+                    reservedFirst: true,
+                },
+            ],
+            "@stylistic/jsx-tag-spacing": [
+                "error",
+                { beforeClosing: "never" },
+            ],
+            "@stylistic/jsx-wrap-multilines": [
+                "error",
+                {
+                    declaration: "parens-new-line",
+                    assignment: "parens-new-line",
+                    return: "parens-new-line",
+                    arrow: "parens-new-line",
+                    condition: "parens-new-line",
+                    logical: "parens-new-line",
+                    prop: "parens-new-line",
+                    propertyValue: "parens-new-line",
+                },
+            ],
         },
     },
 ]

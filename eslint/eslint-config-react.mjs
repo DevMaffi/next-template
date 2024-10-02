@@ -44,23 +44,6 @@ const config = [
                 { assumeUndefinedIsFalse: true },
             ],
 
-            "react/jsx-child-element-spacing": "error",
-            "react/jsx-closing-bracket-location": ["error", "line-aligned"],
-            "react/jsx-closing-tag-location": ["error", "line-aligned"],
-            "react/jsx-curly-spacing": [
-                "error",
-                {
-                    attributes: { allowMultiline: false },
-                    children: true,
-                },
-            ],
-            "react/jsx-curly-newline": [
-                "error",
-                { singleline: "forbid" },
-            ],
-
-            "react/jsx-equals-spacing": "error",
-            "react/jsx-first-prop-new-line": ["error", "multiline"],
             "react/jsx-filename-extension": [
                 "error",
                 {
@@ -78,16 +61,7 @@ const config = [
             "react/jsx-indent": [
                 "error",
                 4,
-                {
-                    checkAttributes: true,
-                    indentLogicalExpressions: true,
-                },
-            ],
-
-            "react/jsx-max-props-per-line": "error",
-            "react/jsx-indent-props": [
-                "error",
-                { ignoreTernaryOperator: true },
+                { indentLogicalExpressions: true },
             ],
             "react/jsx-key": [
                 "error",
@@ -97,10 +71,6 @@ const config = [
                     warnOnDuplicates: true,
                 },
             ], // ☑️
-            "react/jsx-newline": [
-                "error",
-                { prevent: true },
-            ],
             "react/jsx-no-bind": [
                 "error",
                 {
@@ -118,67 +88,32 @@ const config = [
                 { validStrategies: ["ternary"] },
             ],
 
-            "react/jsx-one-expression-per-line": "error",
-            "react/jsx-pascal-case": "error",
             "react/jsx-fragments": ["error", "element"],
-            "react/jsx-props-no-multi-spaces": "error",
-            "react/jsx-curly-brace-presence": [
-                "error",
-                { props: "always" },
-            ],
-
             "react/jsx-props-no-spread-multi": "error",
+            "react/no-invalid-html-attribute": "error",
+            "react/no-adjacent-inline-elements": "error",
             "react/jsx-props-no-spreading": [
                 "error",
                 { html: "ignore" },
             ],
-            "react/jsx-sort-props": [
-                "error",
-                {
-                    callbacksLast: true,
-                    shorthandLast: true,
-                    noSortAlphabetically: true,
-                    reservedFirst: true,
-                },
-            ],
-            "react/jsx-tag-spacing": [
-                "error",
-                { beforeClosing: "never" },
-            ],
-            "react/jsx-wrap-multilines": [
-                "error",
-                {
-                    declaration: "parens-new-line",
-                    assignment: "parens-new-line",
-                    return: "parens-new-line",
-                    arrow: "parens-new-line",
-                    condition: "parens-new-line",
-                    logical: "parens-new-line",
-                    prop: "parens-new-line",
-                },
-            ],
 
-            "react/no-invalid-html-attribute": "error",
-            "react/no-adjacent-inline-elements": "error",
             "react/no-array-index-key": "warn",
             "react/no-danger": "error",
             "react/no-multi-comp": "error",
-
             "react/no-namespace": "error",
             "react/no-this-in-sfc": "error",
+
             "react/no-unstable-nested-components": "error",
             "react/no-unused-prop-types": "error",
+            "react/no-object-type-as-default-prop": "error",
+            "react/prefer-read-only-props": "off", // ❌
             "react/no-unknown-property": [
                 "error",
                 { requireDataLowercase: true },
             ], // ☑️
 
-            "react/no-object-type-as-default-prop": "error",
-            "react/prefer-read-only-props": "off", // ❌
             "react/require-default-props": "off", // ❌
-            "react/self-closing-comp": "error",
             "react/style-prop-object": "error",
-
             "react/void-dom-elements-no-children": "error",
         },
     },
