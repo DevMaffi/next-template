@@ -47,10 +47,10 @@ const config = [
             "@stylistic/func-call-spacing": "error",
             "@stylistic/function-call-argument-newline": "error",
 
-            // "@stylistic/function-paren-newline": ["error", "multiline-arguments"],
-            // "@stylistic/implicit-arrow-linebreak": "error",
-            // "@stylistic/indent": "error",
-            // "@stylistic/indent-binary-ops": ["error", 4],
+            "@stylistic/function-paren-newline": ["error", "multiline-arguments"],
+            "@stylistic/implicit-arrow-linebreak": "error",
+            "@stylistic/indent": "error",
+            "@stylistic/indent-binary-ops": ["error", 4],
             "@stylistic/jsx-child-element-spacing": "error",
 
             "@stylistic/jsx-closing-bracket-location": ["error", "line-aligned"],
@@ -73,7 +73,7 @@ const config = [
 
             "@stylistic/jsx-equals-spacing": "error",
             "@stylistic/jsx-first-prop-new-line": ["error", "multiline"],
-            // "@stylistic/jsx-function-call-newline": "error",
+            "@stylistic/jsx-function-call-newline": "error",
             "@stylistic/jsx-max-props-per-line": "error",
             "@stylistic/jsx-indent-props": [
                 "error",
@@ -83,13 +83,14 @@ const config = [
             "@stylistic/jsx-one-expression-per-line": "error",
             "@stylistic/jsx-pascal-case": "error",
             "@stylistic/jsx-props-no-multi-spaces": "error",
-            // "@stylistic/jsx-quotes": "error",
+            "@stylistic/jsx-quotes": "error",
             "@stylistic/jsx-newline": [
                 "error",
                 { prevent: true },
             ],
 
             "@stylistic/jsx-self-closing-comp": "error",
+            "@stylistic/key-spacing": "error",
             "@stylistic/jsx-sort-props": [
                 "error",
                 {
