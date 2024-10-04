@@ -36,7 +36,24 @@ const config = [
             "func-style": ["error", "declaration"],
 
             "guard-for-in": "off", // ❌
-            "id-denylist": ["error", "z", "e", "error", "event", "response", "reject", "restProps", "button", "subTitle", "duplicate", "searchQuery", "data", "msg"],
+            "id-denylist": [
+                "error",
+                "z", // -> zod
+                "e", // -> err
+                "error", // -> err
+                "event", // -> evt
+                "response", // -> res (but result otherwise)
+                "reject", // -> rej
+                "restProps", // -> rest
+                "button", // -> btn
+                "subTitle", // -> subtle
+                "duplicate", // -> dupe
+                "searchQuery", // -> searchTerm
+                "data", // -> e.g. users, todos, movies
+                "msg", // -> message
+                "current", // -> curr
+                "previous", // -> prev
+            ],
             "init-declarations": "error",
             "logical-assignment-operators": ["error", "never"],
             "id-length": [
@@ -90,7 +107,7 @@ const config = [
                 { disallowTemplateShorthand: true },
             ],
 
-            "no-inline-comments": "off", // ❌
+            "no-inline-comments": "error",
             "no-lone-blocks": "error",
             "no-lonely-if": "error",
             "no-inner-declarations": [
