@@ -117,6 +117,44 @@ const config = [
                     propertyValue: "parens-new-line",
                 },
             ],
+
+            "@stylistic/keyword-spacing": "error",
+            "@stylistic/line-comment-position": "error",
+            "@stylistic/linebreak-style": "error",
+            "@stylistic/lines-around-comment": [
+                "error",
+                {
+                    beforeLineComment: true,
+                    allowBlockStart: true,
+                },
+            ],
+            "@stylistic/member-delimiter-style": [
+                "error",
+                {
+                    multiline: { delimiter: "none" },
+                    singleline: { delimiter: "comma" },
+                },
+            ],
+
+            "@stylistic/multiline-comment-style": ["error", "separate-lines"],
+            "@stylistic/multiline-ternary": ["error", "always-multiline"],
+            "@stylistic/new-parens": "error",
+            "@stylistic/newline-per-chained-call": "error",
+            "@stylistic/no-confusing-arrow": "error",
+
+            "@stylistic/no-extra-semi": "error",
+            "@stylistic/no-floating-decimal": "error",
+            "@stylistic/no-mixed-operators": "error",
+            "@stylistic/no-mixed-spaces-and-tabs": "error",
+            "@stylistic/no-extra-parens": [
+                "error",
+                "all",
+                {
+                    nestedBinaryExpressions: false,
+                    ignoreJSX: "multi-line", // ⚠️ jsx-wrap-multilines
+                    enforceForArrowConditionals: false, // ⚠️ no-confusing-arrow
+                },
+            ],
         },
     },
 ]
