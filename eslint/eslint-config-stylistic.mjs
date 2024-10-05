@@ -45,7 +45,7 @@ const config = [
             "@stylistic/dot-location": ["error", "property"],
             "@stylistic/eol-last": "error",
             "@stylistic/func-call-spacing": "error",
-            "@stylistic/function-call-argument-newline": "error",
+            "@stylistic/function-call-argument-newline": ["error", "consistent"],
 
             "@stylistic/function-paren-newline": ["error", "multiline-arguments"],
             "@stylistic/implicit-arrow-linebreak": "error",
@@ -154,6 +154,56 @@ const config = [
                     ignoreJSX: "multi-line", // ⚠️ jsx-wrap-multilines
                     enforceForArrowConditionals: false, // ⚠️ no-confusing-arrow
                 },
+            ],
+
+            "@stylistic/no-tabs": "error",
+            "@stylistic/no-trailing-spaces": "error",
+            "@stylistic/no-whitespace-before-property": "error",
+            "@stylistic/no-multi-spaces": [
+                "error",
+                {
+                    exceptions: { Property: false },
+                },
+            ],
+            "@stylistic/no-multiple-empty-lines": [
+                "error",
+                {
+                    max: 1,
+                    maxEOF: 1,
+                    maxBOF: 0,
+                },
+            ],
+
+            "@stylistic/nonblock-statement-body-position": "off", // ❌
+            "@stylistic/object-curly-spacing": ["error", "always"],
+            "@stylistic/object-property-newline": "error",
+            "@stylistic/one-var-declaration-per-line": "error",
+            "@stylistic/object-curly-newline": [
+                "error",
+                {
+                    multiline: true,
+                    minProperties: 2,
+                    consistent: true,
+                },
+            ],
+
+            "@stylistic/operator-linebreak": ["error", "before"],
+            "@stylistic/padded-blocks": ["error", "never"],
+            "@stylistic/quotes": "error",
+            "@stylistic/padding-line-between-statements": [
+                "error",
+                { blankLine: "always", prev: "*", next: "return" },
+                { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
+                { blankLine: "any",    prev: ["const", "let", "var"], next: ["const", "let", "var"] },
+                { blankLine: "always", prev: "directive", next: "*" },
+                { blankLine: "any",    prev: "directive", next: "directive" },
+                { blankLine: "always", prev: ["case", "default"], next: "*" },
+                { blankLine: "always", prev: "*", next: ["enum", "interface", "type"] },
+            ],
+            "@stylistic/quote-props": [
+                "error",
+                "consistent-as-needed",
+                { keywords: true },
             ],
         },
     },
