@@ -97,19 +97,22 @@ const config = [
 
             "no-extra-bind": "error",
             "no-implicit-globals": "error",
-            "no-implied-eval": "error",
             "no-extra-boolean-cast": [
                 "error",
                 { enforceForInnerExpressions: true },
+            ], // ☑️
+            "no-fallthrough": [
+                "error",
+                { allowEmptyCase: true },
             ], // ☑️
             "no-implicit-coercion": [
                 "error",
                 { disallowTemplateShorthand: true },
             ],
 
+            "no-implied-eval": "error",
             "no-inline-comments": "error",
             "no-lone-blocks": "error",
-            "no-lonely-if": "error",
             "no-inner-declarations": [
                 "error",
                 "functions",
@@ -120,21 +123,21 @@ const config = [
                 { capIsConstructor: false },
             ],
 
+            "no-lonely-if": "error",
             "no-loop-func": "error",
             "no-magic-numbers": "off", // ❌
             "no-multi-assign": "error",
             "no-multi-str": "error",
-            "no-negated-condition": "error",
 
+            "no-negated-condition": "error",
             "no-nested-ternary": "error",
             "no-new": "off", // ❌
             "no-new-func": "error",
             "no-new-wrappers": "error",
-            "no-object-constructor": "error",
 
+            "no-object-constructor": "error",
             "no-plusplus": "off", // ❌
             "no-return-assign": ["error", "always"],
-            "no-script-url": "error",
             "no-param-reassign": [
                 "error",
                 { props: true },
@@ -144,24 +147,24 @@ const config = [
                 { allowVoid: true },
             ],
 
+            "no-script-url": "error",
             "no-self-compare": "error",
             "no-sequences": "error",
             "no-template-curly-in-string": "error",
-            "no-ternary": "off", // ❌
             "no-shadow": [
                 "error",
                 { hoist: "all" },
             ],
 
+            "no-ternary": "off", // ❌
             "no-throw-literal": "error",
             "no-undef-init": "off", // ❌
             "no-undefined": "off", // ❌
             "no-underscore-dangle": "error",
-            "no-unmodified-loop-condition": "off", // ❌
 
+            "no-unmodified-loop-condition": "off", // ❌
             "no-unreachable-loop": "off", // ❌
             "no-use-before-define": "error",
-            "no-useless-assignment": "off", // ❌ ⚠️ init-declarations
             "no-unneeded-ternary": [
                 "error",
                 { defaultAssignment: false },
@@ -171,16 +174,16 @@ const config = [
                 { disallowArithmeticOperators: true },
             ], // ☑️
 
+            "no-useless-assignment": "off", // ❌ ⚠️ init-declarations
             "no-useless-call": "error",
             "no-useless-computed-key": "error",
             "no-useless-concat": "error",
             "no-useless-rename": "error",
-            "no-useless-return": "error",
 
+            "no-useless-return": "error",
             "no-var": "off", // ❌ ☑️
             "no-void": "off", // ❌
             "no-warning-comments": "warn",
-            "one-var": ["error", "never"],
             "object-shorthand": [
                 "error",
                 "always",
@@ -190,9 +193,9 @@ const config = [
                 },
             ],
 
+            "one-var": ["error", "never"],
             "operator-assignment": "error",
             "prefer-destructuring": "off", // ❌
-            "prefer-exponentiation-operator": "error",
             "prefer-arrow-callback": [
                 "error",
                 { allowNamedFunctions: true },
@@ -202,15 +205,16 @@ const config = [
                 { ignoreReadBeforeAssign: true }, // ⚠️ no-use-before-define
             ], // ☑️
 
+            "prefer-exponentiation-operator": "error",
             "prefer-named-capture-group": "error",
             "prefer-object-spread": "error",
             "prefer-promise-reject-errors": "error",
-            "prefer-template": "error",
             "prefer-regex-literals": [
                 "error",
                 { disallowRedundantWrapping: true },
             ],
 
+            "prefer-template": "error",
             "require-atomic-updates": "error",
             "require-await": "off", // ❌
             "sort-keys": "off", // ❌
