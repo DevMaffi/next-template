@@ -233,6 +233,14 @@ const config = [
             "@stylistic/template-tag-spacing": "error",
             "@stylistic/type-annotation-spacing": "error",
             "@stylistic/type-generic-spacing": "error",
+
+            "@stylistic/type-named-tuple-spacing": "error",
+            "@stylistic/wrap-regex": "error",
+            "@stylistic/wrap-iife": [
+                "error",
+                "inside",
+                { functionPrototypeMethods: true },
+            ],
         },
     },
 ]
