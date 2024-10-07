@@ -205,6 +205,34 @@ const config = [
                 "consistent-as-needed",
                 { keywords: true },
             ],
+
+            "@stylistic/rest-spread-spacing": "error",
+            "@stylistic/semi-spacing": "error",
+            "@stylistic/semi-style": "error",
+            "@stylistic/space-before-blocks": "error",
+            "@stylistic/semi": [
+                "error",
+                "never",
+                { beforeStatementContinuationChars: "always" },
+            ],
+
+            "@stylistic/space-before-function-paren": ["error", "never"],
+            "@stylistic/space-in-parens": "error",
+            "@stylistic/space-infix-ops": "error",
+            "@stylistic/space-unary-ops": "error",
+            "@stylistic/spaced-comment": [
+                "error",
+                "always",
+                {
+                    block: { balanced: true },
+                },
+            ],
+
+            "@stylistic/switch-colon-spacing": "error",
+            "@stylistic/template-curly-spacing": "error",
+            "@stylistic/template-tag-spacing": "error",
+            "@stylistic/type-annotation-spacing": "error",
+            "@stylistic/type-generic-spacing": "error",
         },
     },
 ]
