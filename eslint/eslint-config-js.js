@@ -5,7 +5,7 @@
 const config = [
     {
         rules: {
-            // eslint
+            // @eslint/js
 
             "arrow-body-style": "error",
             "block-scoped-var": "error",
