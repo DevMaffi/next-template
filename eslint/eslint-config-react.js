@@ -85,10 +85,10 @@ const config = [
             "react/jsx-no-useless-fragment": "error",
             "react/jsx-no-leaked-render": [
                 "error",
-                { validStrategies: ["ternary"] },
+                { validStrategies: ["ternary"] }, // ✨
             ],
 
-            "react/jsx-fragments": ["error", "element"],
+            "react/jsx-fragments": ["error", "element"], // ✨
             "react/jsx-props-no-spread-multi": "error",
             "react/no-invalid-html-attribute": "error",
             "react/no-adjacent-inline-elements": "error",

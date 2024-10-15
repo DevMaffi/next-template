@@ -13,7 +13,7 @@ const config = [
         rules: {
             // @stylistic
 
-            "@stylistic/arrow-parens": ["error", "as-needed"],
+            "@stylistic/arrow-parens": ["error", "as-needed"], // ✨
             "@stylistic/arrow-spacing": "error",
             "@stylistic/array-bracket-newline": [
                 "error",
@@ -36,7 +36,7 @@ const config = [
             ],
 
             "@stylistic/block-spacing": "error",
-            "@stylistic/brace-style": ["error", "allman"],
+            "@stylistic/brace-style": ["error", "allman"], // ✨
             "@stylistic/comma-dangle": ["error", "always-multiline"],
             "@stylistic/comma-spacing": "error",
             "@stylistic/comma-style": "error",
@@ -58,7 +58,7 @@ const config = [
             "@stylistic/jsx-curly-brace-presence": [
                 "error",
                 {
-                    props: "always",
+                    props: "always", // ✨
                     propElementValues: "always", // ⚠️
                 },
             ],
@@ -80,7 +80,7 @@ const config = [
                 { ignoreTernaryOperator: true },
             ],
 
-            "@stylistic/jsx-one-expression-per-line": "error",
+            "@stylistic/jsx-one-expression-per-line": "error", // ✨
             "@stylistic/jsx-pascal-case": "error",
             "@stylistic/jsx-props-no-multi-spaces": "error",
             "@stylistic/jsx-quotes": "error",
@@ -120,7 +120,7 @@ const config = [
 
             "@stylistic/keyword-spacing": "error",
             "@stylistic/line-comment-position": "error",
-            "@stylistic/linebreak-style": "error",
+            "@stylistic/linebreak-style": "error", // ✨
             "@stylistic/lines-around-comment": [
                 "error",
                 {
@@ -134,7 +134,7 @@ const config = [
                     multiline: { delimiter: "none" },
                     singleline: { delimiter: "comma" },
                 },
-            ],
+            ], // ✨
 
             "@stylistic/multiline-comment-style": ["error", "separate-lines"],
             "@stylistic/multiline-ternary": ["error", "always-multiline"],
@@ -174,7 +174,7 @@ const config = [
                 },
             ],
 
-            "@stylistic/nonblock-statement-body-position": "off", // ❌
+            "@stylistic/nonblock-statement-body-position": "off", // ❌ ✨
             "@stylistic/object-curly-spacing": ["error", "always"],
             "@stylistic/object-property-newline": "error",
             "@stylistic/one-var-declaration-per-line": "error",
@@ -189,7 +189,7 @@ const config = [
 
             "@stylistic/operator-linebreak": ["error", "before"],
             "@stylistic/padded-blocks": ["error", "never"],
-            "@stylistic/quotes": "error",
+            "@stylistic/quotes": "error", // ✨
             "@stylistic/padding-line-between-statements": [
                 "error",
                 { blankLine: "always", prev: "*", next: "return" },
@@ -199,7 +199,7 @@ const config = [
                 { blankLine: "any",    prev: "directive", next: "directive" },
                 { blankLine: "always", prev: ["case", "default"], next: "*" },
                 { blankLine: "always", prev: "*", next: ["enum", "interface", "type"] },
-            ],
+            ], // ✨
             "@stylistic/quote-props": [
                 "error",
                 "consistent-as-needed",
@@ -214,7 +214,7 @@ const config = [
                 "error",
                 "never",
                 { beforeStatementContinuationChars: "always" },
-            ],
+            ], // ✨
 
             "@stylistic/space-before-function-paren": ["error", "never"],
             "@stylistic/space-in-parens": "error",

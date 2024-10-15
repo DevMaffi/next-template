@@ -7,7 +7,7 @@ const config = [
         rules: {
             // @eslint/js
 
-            "arrow-body-style": "error",
+            "arrow-body-style": "error", // ✨
             "block-scoped-var": "error",
             "camelcase": "error",
             "array-callback-return": [
@@ -24,7 +24,7 @@ const config = [
             ],
 
             "consistent-return": "error",
-            "curly": ["error", "multi-or-nest", "consistent"],
+            "curly": ["error", "multi-or-nest", "consistent"], // ✨
             "default-case": "error",
             "default-case-last": "error",
             "default-param-last": "error",
@@ -103,7 +103,7 @@ const config = [
             ], // ☑️
             "no-fallthrough": [
                 "error",
-                { allowEmptyCase: true },
+                { allowEmptyCase: true }, // ✨
             ], // ☑️
             "no-implicit-coercion": [
                 "error",
@@ -191,7 +191,7 @@ const config = [
                     avoidQuotes: true,
                     avoidExplicitReturnArrows: true,
                 },
-            ],
+            ], // ✨
 
             "one-var": ["error", "never"],
             "operator-assignment": "error",
