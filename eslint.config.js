@@ -25,9 +25,11 @@ export default tseslint.config(
     {
         languageOptions: {
             ecmaVersion: 2022,
-            sourceType: "module",
-            globals: globals.browser,
             parserOptions: react.configs.parserOptions,
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+            },
         },
     },
     ...combineConfigs.map(config => ({
