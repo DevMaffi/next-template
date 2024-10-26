@@ -1,4 +1,338 @@
 /**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const identifiers = {
+    "camelcase": "warn",
+    "no-underscore-dangle": "warn",
+    "id-denylist": [
+        "warn",
+        "z", // -> zod
+        "e", // -> err
+        "error", // -> err
+        "event", // -> evt
+        "response", // -> res (but result otherwise)
+        "reject", // -> rej
+        "restProps", // -> rest
+        "button", // -> btn
+        "subTitle", // -> subtle
+        "duplicate", // -> dupe
+        "searchQuery", // -> searchTerm
+        "data", // -> e.g. users, todos, movies
+        "msg", // -> message
+        "current", // -> curr
+        "previous", // -> prev
+    ], // ✨
+    "id-length": [
+        "warn",
+        {
+            properties: "never",
+            exceptions: ["_"],
+        },
+    ],
+    "no-shadow": [
+        "warn",
+        { hoist: "all" },
+    ],
+
+    "no-useless-rename": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const variables = {
+    "init-declarations": "error",
+    "no-multi-assign": "error",
+    "no-useless-assignment": "off", // ❌ ⚠️ init-declarations
+    "prefer-destructuring": "off", // ❌
+    "prefer-const": [
+        "error",
+        { ignoreReadBeforeAssign: true }, // ⚠️ no-use-before-define
+    ], // ☑️
+
+    "sort-vars": "off", // ❌
+    "vars-on-top": "off", // ❌
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const varKeyword = {
+    "block-scoped-var": "error",
+    "no-var": "off", // ❌ ☑️
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const literals = {
+    "no-magic-numbers": "off", // ❌
+    "no-multi-str": "error",
+    "no-template-curly-in-string": "error",
+    "no-undef-init": "off", // ❌
+    "no-undefined": "off", // ❌
+
+    "no-useless-concat": "error",
+    "prefer-template": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const objects = {
+    "dot-notation": "error",
+    "no-extend-native": "error",
+    "no-object-constructor": "error",
+    "no-useless-computed-key": "error",
+    "object-shorthand": [
+        "error",
+        "always",
+        {
+            avoidQuotes: true,
+            avoidExplicitReturnArrows: true,
+        },
+    ], // ✨
+
+    "prefer-object-spread": "error",
+    "sort-keys": "off", // ❌
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const functions = {
+    "consistent-return": "error",
+    "func-name-matching": "warn",
+    "func-names": ["warn", "as-needed"],
+    "func-style": ["error", "declaration"],
+    "new-cap": [
+        "error",
+        { capIsNew: false },
+    ],
+
+    "no-extra-bind": "error",
+    "no-loop-func": "error",
+    "no-new-func": "error",
+    "no-empty-function": [
+        "error",
+        { allow: ["arrowFunctions"] },
+    ],
+    "no-invalid-this": [
+        "error",
+        { capIsConstructor: false },
+    ],
+
+    "no-return-assign": ["error", "always"],
+    "no-use-before-define": "warn",
+    "no-useless-call": "error",
+    "no-useless-return": "error",
+    "no-param-reassign": [
+        "warn",
+        { props: true },
+    ],
+
+    "no-void": "off", // ❌
+    "one-var": ["error", "never"],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const arrows = {
+    "arrow-body-style": "error", // ✨
+    "array-callback-return": [
+        "error",
+        {
+            checkForEach: true,
+            allowVoid: true,
+        },
+    ],
+    "prefer-arrow-callback": [
+        "error",
+        { allowNamedFunctions: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const asynchronous = {
+    "no-await-in-loop": "error",
+    "no-throw-literal": "warn",
+    "prefer-promise-reject-errors": "warn",
+    "require-atomic-updates": "error",
+    "no-promise-executor-return": [
+        "error",
+        { allowVoid: true },
+    ],
+
+    "require-await": "off", // ❌
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const operators = {
+    "logical-assignment-operators": ["error", "never"],
+    "no-plusplus": "off", // ❌
+    "no-extra-boolean-cast": [
+        "error",
+        { enforceForInnerExpressions: true },
+    ], // ☑️
+    "no-implicit-coercion": [
+        "error",
+        { disallowTemplateShorthand: true },
+    ],
+    "no-unsafe-optional-chaining": [
+        "error",
+        { disallowArithmeticOperators: true },
+    ], // ☑️
+
+    "operator-assignment": "error",
+    "prefer-exponentiation-operator": "warn",
+    "valid-typeof": [
+        "warn",
+        { requireStringLiterals: true },
+    ], // ☑️
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const logical = {
+    "eqeqeq": "error",
+    "no-eq-null": "error",
+    "no-negated-condition": "warn",
+    "no-self-compare": "error",
+    "yoda": [
+        "warn",
+        "never",
+        { exceptRange: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const ternary = {
+    "no-nested-ternary": "error",
+    "no-ternary": "off", // ❌
+    "no-unneeded-ternary": [
+        "error",
+        { defaultAssignment: false },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const controlStatements = {
+    "curly": "error", // ✨
+    "no-cond-assign": ["error", "always"], // ☑️
+    "no-lonely-if": "error",
+    "no-else-return": [
+        "error",
+        { allowElseIf: false },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const switchStatement = {
+    "default-case": "error",
+    "default-case-last": "error",
+    "default-param-last": "error",
+    "no-fallthrough": [
+        "error",
+        { allowEmptyCase: true }, // ✨
+    ], // ☑️
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const loops = {
+    "guard-for-in": "off", // ❌
+    "no-continue": "off", // ❌
+    "no-unmodified-loop-condition": "off", // ❌
+    "no-unreachable-loop": "off", // ❌
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const imports = {
+    "no-duplicate-imports": [
+        "error",
+        { includeExports: true },
+    ],
+    "sort-imports": [
+        "warn",
+        { ignoreDeclarationSort: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const regex = {
+    "no-div-regex": "error",
+    "prefer-named-capture-group": "warn",
+    "prefer-regex-literals": [
+        "error",
+        { disallowRedundantWrapping: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const debug = {
+    "no-alert": "error",
+    "no-console": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const comments = {
+    "no-inline-comments": "warn",
+    "no-warning-comments": "warn",
+    "capitalized-comments": [
+        "warn",
+        "always",
+        { ignoreConsecutiveComments: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const misc = {
+    "no-bitwise": "error",
+    "no-caller": "error",
+    "no-eval": "error",
+    "no-implicit-globals": "error",
+    "no-implied-eval": "error",
+
+    "no-lone-blocks": "error",
+    "no-new": "off", // ❌
+    "no-new-wrappers": "error",
+    "no-script-url": "error",
+    "no-inner-declarations": [
+        "error",
+        "functions",
+        { blockScopedFunctions: "disallow" },
+    ],
+
+    "no-sequences": "error",
+    "strict": "error",
+    "symbol-description": "error",
+    "unicode-bom": "error",
+}
+
+/**
  * @see https://eslint.org/docs/latest/rules
  * @type {import("typescript-eslint").ConfigWithExtends[]}
  */
@@ -7,237 +341,28 @@ const config = [
         rules: {
             // @eslint/js
 
-            "arrow-body-style": "error", // ✨
-            "block-scoped-var": "error",
-            "camelcase": "error",
-            "array-callback-return": [
-                "error",
-                {
-                    checkForEach: true,
-                    allowVoid: true,
-                },
-            ],
-            "capitalized-comments": [
-                "warn",
-                "always",
-                { ignoreConsecutiveComments: true },
-            ],
+            ...identifiers,
+            ...variables,
+            ...varKeyword,
+            ...literals,
+            ...objects,
 
-            "consistent-return": "error",
-            "curly": ["error", "multi-or-nest", "consistent"], // ✨
-            "default-case": "error",
-            "default-case-last": "error",
-            "default-param-last": "error",
+            ...functions,
+            ...arrows,
+            ...asynchronous,
+            ...operators,
+            ...logical,
 
-            "dot-notation": "error",
-            "eqeqeq": "error",
-            "func-name-matching": "error",
-            "func-names": ["error", "as-needed"],
-            "func-style": ["error", "declaration"],
+            ...ternary,
+            ...controlStatements,
+            ...switchStatement,
+            ...loops,
+            ...imports,
 
-            "guard-for-in": "off", // ❌
-            "id-denylist": [
-                "error",
-                "z", // -> zod
-                "e", // -> err
-                "error", // -> err
-                "event", // -> evt
-                "response", // -> res (but result otherwise)
-                "reject", // -> rej
-                "restProps", // -> rest
-                "button", // -> btn
-                "subTitle", // -> subtle
-                "duplicate", // -> dupe
-                "searchQuery", // -> searchTerm
-                "data", // -> e.g. users, todos, movies
-                "msg", // -> message
-                "current", // -> curr
-                "previous", // -> prev
-            ],
-            "init-declarations": "error",
-            "logical-assignment-operators": ["error", "never"],
-            "id-length": [
-                "error",
-                {
-                    min: 3,
-                    properties: "never",
-                    exceptions: ["_"],
-                },
-            ],
-
-            "no-alert": "error",
-            "no-await-in-loop": "error",
-            "no-bitwise": "error",
-            "no-caller": "error",
-            "new-cap": [
-                "error",
-                { capIsNew: false },
-            ],
-
-            "no-cond-assign": ["error", "always"], // ☑️
-            "no-console": "error",
-            "no-continue": "error",
-            "no-div-regex": "error",
-            "no-duplicate-imports": [
-                "error",
-                { includeExports: true },
-            ],
-
-            "no-eq-null": "error",
-            "no-eval": "error",
-            "no-extend-native": "error",
-            "no-else-return": [
-                "error",
-                { allowElseIf: false },
-            ],
-            "no-empty-function": [
-                "error",
-                { allow: ["arrowFunctions"] },
-            ],
-
-            "no-extra-bind": "error",
-            "no-implicit-globals": "error",
-            "no-extra-boolean-cast": [
-                "error",
-                { enforceForInnerExpressions: true },
-            ], // ☑️
-            "no-fallthrough": [
-                "error",
-                { allowEmptyCase: true }, // ✨
-            ], // ☑️
-            "no-implicit-coercion": [
-                "error",
-                { disallowTemplateShorthand: true },
-            ],
-
-            "no-implied-eval": "error",
-            "no-inline-comments": "error",
-            "no-lone-blocks": "error",
-            "no-inner-declarations": [
-                "error",
-                "functions",
-                { blockScopedFunctions: "disallow" },
-            ],
-            "no-invalid-this": [
-                "error",
-                { capIsConstructor: false },
-            ],
-
-            "no-lonely-if": "error",
-            "no-loop-func": "error",
-            "no-magic-numbers": "off", // ❌
-            "no-multi-assign": "error",
-            "no-multi-str": "error",
-
-            "no-negated-condition": "error",
-            "no-nested-ternary": "error",
-            "no-new": "off", // ❌
-            "no-new-func": "error",
-            "no-new-wrappers": "error",
-
-            "no-object-constructor": "error",
-            "no-plusplus": "off", // ❌
-            "no-return-assign": ["error", "always"],
-            "no-param-reassign": [
-                "error",
-                { props: true },
-            ],
-            "no-promise-executor-return": [
-                "error",
-                { allowVoid: true },
-            ],
-
-            "no-script-url": "error",
-            "no-self-compare": "error",
-            "no-sequences": "error",
-            "no-template-curly-in-string": "error",
-            "no-shadow": [
-                "error",
-                { hoist: "all" },
-            ],
-
-            "no-ternary": "off", // ❌
-            "no-throw-literal": "error",
-            "no-undef-init": "off", // ❌
-            "no-undefined": "off", // ❌
-            "no-underscore-dangle": "error",
-
-            "no-unmodified-loop-condition": "off", // ❌
-            "no-unreachable-loop": "off", // ❌
-            "no-use-before-define": "error",
-            "no-unneeded-ternary": [
-                "error",
-                { defaultAssignment: false },
-            ],
-            "no-unsafe-optional-chaining": [
-                "error",
-                { disallowArithmeticOperators: true },
-            ], // ☑️
-
-            "no-useless-assignment": "off", // ❌ ⚠️ init-declarations
-            "no-useless-call": "error",
-            "no-useless-computed-key": "error",
-            "no-useless-concat": "error",
-            "no-useless-rename": "error",
-
-            "no-useless-return": "error",
-            "no-var": "off", // ❌ ☑️
-            "no-void": "off", // ❌
-            "no-warning-comments": "warn",
-            "object-shorthand": [
-                "error",
-                "always",
-                {
-                    avoidQuotes: true,
-                    avoidExplicitReturnArrows: true,
-                },
-            ], // ✨
-
-            "one-var": ["error", "never"],
-            "operator-assignment": "error",
-            "prefer-destructuring": "off", // ❌
-            "prefer-arrow-callback": [
-                "error",
-                { allowNamedFunctions: true },
-            ],
-            "prefer-const": [
-                "error",
-                { ignoreReadBeforeAssign: true }, // ⚠️ no-use-before-define
-            ], // ☑️
-
-            "prefer-exponentiation-operator": "error",
-            "prefer-named-capture-group": "error",
-            "prefer-object-spread": "error",
-            "prefer-promise-reject-errors": "error",
-            "prefer-regex-literals": [
-                "error",
-                { disallowRedundantWrapping: true },
-            ],
-
-            "prefer-template": "error",
-            "require-atomic-updates": "error",
-            "require-await": "off", // ❌
-            "sort-keys": "off", // ❌
-            "sort-vars": "off", // ❌
-            "sort-imports": [
-                "error",
-                { ignoreDeclarationSort: true },
-            ],
-
-            "strict": "error",
-            "symbol-description": "error",
-            "unicode-bom": "error",
-            "vars-on-top": "off", // ❌
-            "valid-typeof": [
-                "error",
-                { requireStringLiterals: true },
-            ], // ☑️
-
-            "yoda": [
-                "error",
-                "never",
-                { exceptRange: true },
-            ],
+            ...regex,
+            ...debug,
+            ...comments,
+            ...misc,
         },
     },
 ]
