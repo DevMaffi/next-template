@@ -1,6 +1,390 @@
 import stylistic from "@stylistic/eslint-plugin"
 
 /**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const indent = {
+    "@stylistic/indent": "error",
+    "@stylistic/indent-binary-ops": ["error", 4],
+    "@stylistic/no-mixed-spaces-and-tabs": "error",
+    "@stylistic/no-tabs": "error",
+    "@stylistic/jsx-indent-props": [
+        "error",
+        { ignoreTernaryOperator: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const quotes = {
+    "@stylistic/jsx-quotes": "error",
+    "@stylistic/quotes": "error", // ✨
+    "@stylistic/quote-props": [
+        "error",
+        "consistent-as-needed",
+        { keywords: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const semi = {
+    "@stylistic/no-extra-semi": "error",
+    "@stylistic/semi-spacing": "error",
+    "@stylistic/semi-style": "error",
+    "@stylistic/semi": [
+        "error",
+        "never",
+        { beforeStatementContinuationChars: "always" }, // ✨
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const padding = {
+    "@stylistic/eol-last": "error",
+    "@stylistic/padded-blocks": ["error", "never"],
+    "@stylistic/jsx-newline": [
+        "error",
+        { prevent: true },
+    ],
+    "@stylistic/no-multiple-empty-lines": [
+        "error",
+        {
+            max: 1,
+            maxEOF: 1,
+            maxBOF: 0,
+        },
+    ],
+    "@stylistic/padding-line-between-statements": [
+        "error",
+        { blankLine: "always", prev: "*", next: "return" },
+        { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
+        { blankLine: "any",    prev: ["const", "let", "var"], next: ["const", "let", "var"] },
+        { blankLine: "always", prev: "directive", next: "*" },
+        { blankLine: "any",    prev: "directive", next: "directive" },
+        { blankLine: "always", prev: ["case", "default"], next: "*" },
+        { blankLine: "always", prev: "*", next: ["enum", "interface", "type"] },
+    ], // ✨
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const types = {
+    "@stylistic/type-annotation-spacing": "error",
+    "@stylistic/type-generic-spacing": "error",
+    "@stylistic/type-named-tuple-spacing": "error",
+    "@stylistic/member-delimiter-style": [
+        "error",
+        {
+            multiline: { delimiter: "none" },
+            singleline: { delimiter: "comma" },
+        },
+    ], // ✨
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const identifiers = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const variables = {
+    "@stylistic/one-var-declaration-per-line": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const varKeyword = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const literals = {
+    "@stylistic/no-floating-decimal": "error",
+    "@stylistic/template-curly-spacing": "error",
+    "@stylistic/template-tag-spacing": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const arrays = {
+    "@stylistic/array-bracket-newline": [
+        "error",
+        {
+            multiline: true,
+            minItems: 3,
+        },
+    ],
+    "@stylistic/array-bracket-spacing": [
+        "error",
+        "never",
+        { arraysInArrays: true },
+    ],
+    "@stylistic/array-element-newline": [
+        "error",
+        {
+            multiline: true,
+            minItems: 3,
+        },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const objects = {
+    "@stylistic/computed-property-spacing": "error",
+    "@stylistic/dot-location": ["error", "property"],
+    "@stylistic/key-spacing": "error",
+    "@stylistic/newline-per-chained-call": "error",
+    "@stylistic/no-whitespace-before-property": "error",
+
+    "@stylistic/object-curly-spacing": ["error", "always"],
+    "@stylistic/object-property-newline": "error",
+    "@stylistic/object-curly-newline": [
+        "error",
+        {
+            multiline: true,
+            minProperties: 2,
+            consistent: true,
+        },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const functions = {
+    "@stylistic/func-call-spacing": "error",
+    "@stylistic/function-call-argument-newline": ["error", "consistent"],
+    "@stylistic/function-paren-newline": ["error", "multiline-arguments"],
+    "@stylistic/jsx-function-call-newline": "error",
+    "@stylistic/space-before-function-paren": ["error", "never"],
+
+    "@stylistic/wrap-iife": [
+        "error",
+        "inside",
+        { functionPrototypeMethods: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const arrows = {
+    "@stylistic/arrow-parens": ["error", "as-needed"], // ✨
+    "@stylistic/arrow-spacing": "error",
+    "@stylistic/implicit-arrow-linebreak": "error",
+    "@stylistic/no-confusing-arrow": "warn",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const asynchronous = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const operators = {
+    "@stylistic/no-mixed-operators": "warn",
+    "@stylistic/operator-linebreak": ["error", "before"],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const logical = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const ternary = {
+    "@stylistic/multiline-ternary": ["error", "always-multiline"],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const controlStatements = {
+    "@stylistic/nonblock-statement-body-position": "off", // ❌ ✨
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const switchStatement = {
+    "@stylistic/switch-colon-spacing": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const loops = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const imports = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const regex = {
+    "@stylistic/wrap-regex": "warn",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const debug = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const comments = {
+    "@stylistic/line-comment-position": "warn",
+    "@stylistic/multiline-comment-style": ["error", "separate-lines"],
+    "@stylistic/lines-around-comment": [
+        "error",
+        {
+            beforeLineComment: true,
+            allowBlockStart: true,
+        },
+    ],
+    "@stylistic/spaced-comment": [
+        "error",
+        "always",
+        {
+            block: { balanced: true },
+        },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const jsx = {
+    "@stylistic/jsx-child-element-spacing": "warn",
+    "@stylistic/jsx-closing-bracket-location": ["error", "line-aligned"],
+    "@stylistic/jsx-closing-tag-location": "error",
+    "@stylistic/jsx-curly-brace-presence": [
+        "error",
+        {
+            props: "always", // ✨
+            propElementValues: "always", // ⚠️
+        },
+    ],
+    "@stylistic/jsx-curly-newline": [
+        "error",
+        { singleline: "forbid" },
+    ],
+
+    "@stylistic/jsx-equals-spacing": "error",
+    "@stylistic/jsx-first-prop-new-line": ["error", "multiline"],
+    "@stylistic/jsx-max-props-per-line": "error",
+    "@stylistic/jsx-one-expression-per-line": "error", // ✨
+    "@stylistic/jsx-curly-spacing": [
+        "error",
+        { children: true },
+    ],
+
+    "@stylistic/jsx-pascal-case": "error",
+    "@stylistic/jsx-props-no-multi-spaces": "error",
+    "@stylistic/jsx-self-closing-comp": "error",
+    "@stylistic/jsx-sort-props": [
+        "warn",
+        {
+            callbacksLast: true,
+            shorthandLast: true,
+            noSortAlphabetically: true,
+            reservedFirst: true,
+        },
+    ],
+    "@stylistic/jsx-tag-spacing": [
+        "error",
+        { beforeClosing: "never" },
+    ],
+
+    "@stylistic/jsx-wrap-multilines": [
+        "error",
+        {
+            declaration: "parens-new-line",
+            assignment: "parens-new-line",
+            return: "parens-new-line",
+            arrow: "parens-new-line",
+            condition: "parens-new-line",
+            logical: "parens-new-line",
+            prop: "parens-new-line",
+            propertyValue: "parens-new-line",
+        },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const brackets = {
+    "@stylistic/brace-style": ["error", "allman"], // ✨
+    "@stylistic/space-in-parens": "error",
+    "@stylistic/no-extra-parens": [
+        "warn",
+        "all",
+        {
+            nestedBinaryExpressions: false,
+            ignoreJSX: "multi-line", // ⚠️ jsx-wrap-multilines
+            enforceForArrowConditionals: false, // ⚠️ no-confusing-arrow
+        },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const comma = {
+    "@stylistic/comma-dangle": ["error", "always-multiline"],
+    "@stylistic/comma-spacing": "error",
+    "@stylistic/comma-style": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const spacing = {
+    "@stylistic/block-spacing": "error",
+    "@stylistic/keyword-spacing": "error",
+    "@stylistic/no-trailing-spaces": "error",
+    "@stylistic/rest-spread-spacing": "error",
+    "@stylistic/no-multi-spaces": [
+        "error",
+        {
+            exceptions: { Property: false },
+        },
+    ],
+
+    "@stylistic/space-before-blocks": "error",
+    "@stylistic/space-infix-ops": "error",
+    "@stylistic/space-unary-ops": "error",
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const misc = {
+    "@stylistic/linebreak-style": "error", // ✨
+    "@stylistic/new-parens": "error",
+}
+
+/**
  * @see https://eslint.style/packages/default
  * @type {import("typescript-eslint").ConfigWithExtends[]}
  */
@@ -13,234 +397,40 @@ const config = [
         rules: {
             // @stylistic
 
-            "@stylistic/arrow-parens": ["error", "as-needed"], // ✨
-            "@stylistic/arrow-spacing": "error",
-            "@stylistic/array-bracket-newline": [
-                "error",
-                {
-                    multiline: true,
-                    minItems: 3,
-                },
-            ],
-            "@stylistic/array-bracket-spacing": [
-                "error",
-                "never",
-                { arraysInArrays: true },
-            ],
-            "@stylistic/array-element-newline": [
-                "error",
-                {
-                    multiline: true,
-                    minItems: 3,
-                },
-            ],
+            ...indent,
+            ...quotes,
+            ...semi,
+            ...padding,
+            ...types,
 
-            "@stylistic/block-spacing": "error",
-            "@stylistic/brace-style": ["error", "allman"], // ✨
-            "@stylistic/comma-dangle": ["error", "always-multiline"],
-            "@stylistic/comma-spacing": "error",
-            "@stylistic/comma-style": "error",
+            ...identifiers,
+            ...variables,
+            ...varKeyword,
+            ...literals,
+            ...arrays,
+            ...objects,
 
-            "@stylistic/computed-property-spacing": "error",
-            "@stylistic/dot-location": ["error", "property"],
-            "@stylistic/eol-last": "error",
-            "@stylistic/func-call-spacing": "error",
-            "@stylistic/function-call-argument-newline": ["error", "consistent"],
+            ...functions,
+            ...arrows,
+            ...asynchronous,
 
-            "@stylistic/function-paren-newline": ["error", "multiline-arguments"],
-            "@stylistic/implicit-arrow-linebreak": "error",
-            "@stylistic/indent": "error",
-            "@stylistic/indent-binary-ops": ["error", 4],
-            "@stylistic/jsx-child-element-spacing": "error",
+            ...operators,
+            ...logical,
+            ...ternary,
+            ...controlStatements,
+            ...switchStatement,
+            ...loops,
 
-            "@stylistic/jsx-closing-bracket-location": ["error", "line-aligned"],
-            "@stylistic/jsx-closing-tag-location": "error",
-            "@stylistic/jsx-curly-brace-presence": [
-                "error",
-                {
-                    props: "always", // ✨
-                    propElementValues: "always", // ⚠️
-                },
-            ],
-            "@stylistic/jsx-curly-newline": [
-                "error",
-                { singleline: "forbid" },
-            ],
-            "@stylistic/jsx-curly-spacing": [
-                "error",
-                { children: true },
-            ],
+            ...imports,
+            ...regex,
+            ...debug,
+            ...comments,
 
-            "@stylistic/jsx-equals-spacing": "error",
-            "@stylistic/jsx-first-prop-new-line": ["error", "multiline"],
-            "@stylistic/jsx-function-call-newline": "error",
-            "@stylistic/jsx-max-props-per-line": "error",
-            "@stylistic/jsx-indent-props": [
-                "error",
-                { ignoreTernaryOperator: true },
-            ],
-
-            "@stylistic/jsx-one-expression-per-line": "error", // ✨
-            "@stylistic/jsx-pascal-case": "error",
-            "@stylistic/jsx-props-no-multi-spaces": "error",
-            "@stylistic/jsx-quotes": "error",
-            "@stylistic/jsx-newline": [
-                "error",
-                { prevent: true },
-            ],
-
-            "@stylistic/jsx-self-closing-comp": "error",
-            "@stylistic/key-spacing": "error",
-            "@stylistic/jsx-sort-props": [
-                "error",
-                {
-                    callbacksLast: true,
-                    shorthandLast: true,
-                    noSortAlphabetically: true,
-                    reservedFirst: true,
-                },
-            ],
-            "@stylistic/jsx-tag-spacing": [
-                "error",
-                { beforeClosing: "never" },
-            ],
-            "@stylistic/jsx-wrap-multilines": [
-                "error",
-                {
-                    declaration: "parens-new-line",
-                    assignment: "parens-new-line",
-                    return: "parens-new-line",
-                    arrow: "parens-new-line",
-                    condition: "parens-new-line",
-                    logical: "parens-new-line",
-                    prop: "parens-new-line",
-                    propertyValue: "parens-new-line",
-                },
-            ],
-
-            "@stylistic/keyword-spacing": "error",
-            "@stylistic/line-comment-position": "error",
-            "@stylistic/linebreak-style": "error", // ✨
-            "@stylistic/lines-around-comment": [
-                "error",
-                {
-                    beforeLineComment: true,
-                    allowBlockStart: true,
-                },
-            ],
-            "@stylistic/member-delimiter-style": [
-                "error",
-                {
-                    multiline: { delimiter: "none" },
-                    singleline: { delimiter: "comma" },
-                },
-            ], // ✨
-
-            "@stylistic/multiline-comment-style": ["error", "separate-lines"],
-            "@stylistic/multiline-ternary": ["error", "always-multiline"],
-            "@stylistic/new-parens": "error",
-            "@stylistic/newline-per-chained-call": "error",
-            "@stylistic/no-confusing-arrow": "error",
-
-            "@stylistic/no-extra-semi": "error",
-            "@stylistic/no-floating-decimal": "error",
-            "@stylistic/no-mixed-operators": "error",
-            "@stylistic/no-mixed-spaces-and-tabs": "error",
-            "@stylistic/no-extra-parens": [
-                "error",
-                "all",
-                {
-                    nestedBinaryExpressions: false,
-                    ignoreJSX: "multi-line", // ⚠️ jsx-wrap-multilines
-                    enforceForArrowConditionals: false, // ⚠️ no-confusing-arrow
-                },
-            ],
-
-            "@stylistic/no-tabs": "error",
-            "@stylistic/no-trailing-spaces": "error",
-            "@stylistic/no-whitespace-before-property": "error",
-            "@stylistic/no-multi-spaces": [
-                "error",
-                {
-                    exceptions: { Property: false },
-                },
-            ],
-            "@stylistic/no-multiple-empty-lines": [
-                "error",
-                {
-                    max: 1,
-                    maxEOF: 1,
-                    maxBOF: 0,
-                },
-            ],
-
-            "@stylistic/nonblock-statement-body-position": "off", // ❌ ✨
-            "@stylistic/object-curly-spacing": ["error", "always"],
-            "@stylistic/object-property-newline": "error",
-            "@stylistic/one-var-declaration-per-line": "error",
-            "@stylistic/object-curly-newline": [
-                "error",
-                {
-                    multiline: true,
-                    minProperties: 2,
-                    consistent: true,
-                },
-            ],
-
-            "@stylistic/operator-linebreak": ["error", "before"],
-            "@stylistic/padded-blocks": ["error", "never"],
-            "@stylistic/quotes": "error", // ✨
-            "@stylistic/padding-line-between-statements": [
-                "error",
-                { blankLine: "always", prev: "*", next: "return" },
-                { blankLine: "always", prev: ["const", "let", "var"], next: "*" },
-                { blankLine: "any",    prev: ["const", "let", "var"], next: ["const", "let", "var"] },
-                { blankLine: "always", prev: "directive", next: "*" },
-                { blankLine: "any",    prev: "directive", next: "directive" },
-                { blankLine: "always", prev: ["case", "default"], next: "*" },
-                { blankLine: "always", prev: "*", next: ["enum", "interface", "type"] },
-            ], // ✨
-            "@stylistic/quote-props": [
-                "error",
-                "consistent-as-needed",
-                { keywords: true },
-            ],
-
-            "@stylistic/rest-spread-spacing": "error",
-            "@stylistic/semi-spacing": "error",
-            "@stylistic/semi-style": "error",
-            "@stylistic/space-before-blocks": "error",
-            "@stylistic/semi": [
-                "error",
-                "never",
-                { beforeStatementContinuationChars: "always" },
-            ], // ✨
-
-            "@stylistic/space-before-function-paren": ["error", "never"],
-            "@stylistic/space-in-parens": "error",
-            "@stylistic/space-infix-ops": "error",
-            "@stylistic/space-unary-ops": "error",
-            "@stylistic/spaced-comment": [
-                "error",
-                "always",
-                {
-                    block: { balanced: true },
-                },
-            ],
-
-            "@stylistic/switch-colon-spacing": "error",
-            "@stylistic/template-curly-spacing": "error",
-            "@stylistic/template-tag-spacing": "error",
-            "@stylistic/type-annotation-spacing": "error",
-            "@stylistic/type-generic-spacing": "error",
-
-            "@stylistic/type-named-tuple-spacing": "error",
-            "@stylistic/wrap-regex": "error",
-            "@stylistic/wrap-iife": [
-                "error",
-                "inside",
-                { functionPrototypeMethods: true },
-            ],
+            ...jsx,
+            ...brackets,
+            ...comma,
+            ...spacing,
+            ...misc,
         },
     },
 ]
