@@ -3,20 +3,60 @@ import react from "eslint-plugin-react"
 /**
  * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
  */
+const indent = {
+    "react/jsx-indent": [
+        "error",
+        4,
+        { indentLogicalExpressions: true },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const quotes = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const semi = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const padding = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const types = {
+    "react/default-props-match-prop-types": "error",
+    "react/no-unused-prop-types": "error",
+    "react/prefer-read-only-props": "off", // ❌
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const identifiers = {
+    "react/hook-use-state": "error",
+    "react/jsx-handler-names": [
+        "warn",
+        {
+            checkLocalVariables: true,
+            checkInlineFunction: true,
+        },
+    ],
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
 const components = {
     "react/forward-ref-uses-ref": "error",
     "react/function-component-definition": "error",
     "react/no-multi-comp": "error",
     "react/no-namespace": "error",
-    "react/jsx-filename-extension": [
-        "error",
-        {
-            allow: "as-needed",
-            extensions: [".tsx"],
-        },
-    ],
-
-    "react/no-this-in-sfc": "error",
     "react/no-unstable-nested-components": "error",
 }
 
@@ -24,7 +64,7 @@ const components = {
  * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
  */
 const props = {
-    "react/default-props-match-prop-types": "error",
+    "react/checked-requires-onchange-or-readonly": "error",
     "react/boolean-prop-naming": [
         "warn",
         { validateNested: true },
@@ -48,17 +88,15 @@ const props = {
         },
     ], // ☑️
 
+    "react/jsx-props-no-spreading": "off", // ❌
     "react/jsx-props-no-spread-multi": "error",
     "react/no-danger": "warn",
-    "react/no-unused-prop-types": "error",
-    "react/jsx-props-no-spreading": "off", // ❌
+    "react/no-object-type-as-default-prop": "error",
     "react/no-unknown-property": [
         "error",
         { requireDataLowercase: true },
     ], // ☑️
 
-    "react/no-object-type-as-default-prop": "error",
-    "react/prefer-read-only-props": "off", // ❌
     "react/require-default-props": "off", // ❌
     "react/style-prop-object": "error",
 }
@@ -68,7 +106,6 @@ const props = {
  */
 const attributes = {
     "react/button-has-type": "error",
-    "react/checked-requires-onchange-or-readonly": "error",
     "react/iframe-missing-sandbox": "error",
     "react/no-invalid-html-attribute": "error",
 }
@@ -76,28 +113,15 @@ const attributes = {
 /**
  * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
  */
-const state = {
-    "react/hook-use-state": "error",
-    "react/jsx-no-constructed-context-values": "error",
-    "react/jsx-handler-names": [
-        "warn",
-        {
-            checkLocalVariables: true,
-            checkInlineFunction: true,
-        },
-    ],
-}
-
-/**
- * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
- */
 const jsx = {
+    "react/jsx-no-constructed-context-values": "error",
     "react/jsx-no-literals": "off", // ❌
-    "react/jsx-no-script-url": "error",
-    "react/jsx-indent": [
+    "react/jsx-filename-extension": [
         "error",
-        4,
-        { indentLogicalExpressions: true },
+        {
+            allow: "as-needed",
+            extensions: [".tsx"],
+        },
     ],
     "react/jsx-no-bind": [
         "error",
@@ -111,6 +135,7 @@ const jsx = {
         { validStrategies: ["ternary"] }, // ✨
     ],
 
+    "react/jsx-no-script-url": "error",
     "react/no-adjacent-inline-elements": "error",
     "react/no-array-index-key": "warn",
     "react/void-dom-elements-no-children": "error",
@@ -122,6 +147,13 @@ const jsx = {
 const fragments = {
     "react/jsx-no-useless-fragment": "error",
     "react/jsx-fragments": ["error", "element"], // ✨
+}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const misc = {
+    "react/no-this-in-sfc": "error",
 }
 
 /**
@@ -145,12 +177,20 @@ const config = [
 
             ...react.configs.recommended.rules,
 
+            ...indent,
+            ...quotes,
+            ...semi,
+            ...padding,
+            ...types,
+
+            ...identifiers,
             ...components,
             ...props,
             ...attributes,
-            ...state,
+
             ...jsx,
             ...fragments,
+            ...misc,
         },
     },
 ]
