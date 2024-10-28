@@ -1,6 +1,26 @@
 /**
  * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
  */
+const indent = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const quotes = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const semi = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const padding = {}
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
 const identifiers = {
     "camelcase": "warn",
     "no-underscore-dangle": "warn",
@@ -69,12 +89,18 @@ const literals = {
     "no-magic-numbers": "off", // ❌
     "no-multi-str": "error",
     "no-template-curly-in-string": "error",
+    "no-throw-literal": "warn",
     "no-undef-init": "off", // ❌
-    "no-undefined": "off", // ❌
 
+    "no-undefined": "off", // ❌
     "no-useless-concat": "error",
     "prefer-template": "error",
 }
+
+/**
+ * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
+ */
+const arrays = {}
 
 /**
  * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
@@ -106,7 +132,7 @@ const functions = {
     "func-names": ["warn", "as-needed"],
     "func-style": ["error", "declaration"],
     "new-cap": [
-        "error",
+        "warn",
         { capIsNew: false },
     ],
 
@@ -158,15 +184,13 @@ const arrows = {
  */
 const asynchronous = {
     "no-await-in-loop": "error",
-    "no-throw-literal": "warn",
     "prefer-promise-reject-errors": "warn",
     "require-atomic-updates": "error",
+    "require-await": "off", // ❌
     "no-promise-executor-return": [
         "error",
         { allowVoid: true },
     ],
-
-    "require-await": "off", // ❌
 }
 
 /**
@@ -191,7 +215,7 @@ const operators = {
     "operator-assignment": "error",
     "prefer-exponentiation-operator": "warn",
     "valid-typeof": [
-        "warn",
+        "error",
         { requireStringLiterals: true },
     ], // ☑️
 }
@@ -277,7 +301,7 @@ const imports = {
  * @type {import("typescript-eslint").TSESLint.FlatConfig.Config["rules"]}
  */
 const regex = {
-    "no-div-regex": "error",
+    "no-div-regex": "warn",
     "prefer-named-capture-group": "warn",
     "prefer-regex-literals": [
         "error",
@@ -341,27 +365,34 @@ const config = [
         rules: {
             // @eslint/js
 
+            ...indent,
+            ...quotes,
+            ...semi,
+            ...padding,
+
             ...identifiers,
             ...variables,
             ...varKeyword,
             ...literals,
+            ...arrays,
             ...objects,
 
             ...functions,
             ...arrows,
             ...asynchronous,
+
             ...operators,
             ...logical,
-
             ...ternary,
             ...controlStatements,
             ...switchStatement,
             ...loops,
-            ...imports,
 
+            ...imports,
             ...regex,
             ...debug,
             ...comments,
+
             ...misc,
         },
     },
