@@ -31,7 +31,7 @@
     export default $TM_FILENAME_BASE$
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="webstorm--rccp"></a>
 
@@ -61,7 +61,7 @@
     export default $TM_FILENAME_BASE$
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="webstorm--rsc"></a>
 
@@ -82,7 +82,7 @@
     export default $TM_FILENAME_BASE$
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="webstorm--rscp"></a>
 
@@ -110,7 +110,7 @@
     export default $TM_FILENAME_BASE$
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="webstorm--rah"></a>
 
@@ -123,7 +123,7 @@
     }
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 ## VSCode
 
@@ -156,7 +156,7 @@
     }
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="vscode--rccp"></a>
 
@@ -194,7 +194,7 @@
     }
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="vscode--rsc"></a>
 
@@ -223,7 +223,7 @@
     }
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="vscode--rscp"></a>
 
@@ -259,7 +259,7 @@
     }
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
 
 <a name="vscode--rah"></a>
 
@@ -279,4 +279,4 @@
     }
     ```
 
-**[⬆️ back to top](#table-of-contents)**
+**[⬆️ back to top](#snippets)**
