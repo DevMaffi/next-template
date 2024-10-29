@@ -1,6 +1,7 @@
 # Snippets
 
-_**NOTE**: Allman brace style approach is used_
+> [!IMPORTANT]
+> Allman brace style approach is used
 
 ## Table of Contents
 
